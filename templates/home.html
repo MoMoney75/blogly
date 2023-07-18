@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+
+
+    <ul>
+        {% for user in list_of_users %}
+        <li> <a href="/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></li>
+        {% endfor %}
+
+    </ul>
+
+    <form action="/new_user" method="post">
+        <label for="first_name">first name</label>
+        <input type="text" name="first_name">
+
+        <label for="last_name">last name</label>
+        <input type="text" name="last_name">
+
+        <label for="image_url">enter profile picture url</label>
+        <input type="text" name="image_url">
+
+        <button>submit</button>
+    </form>
+
+</body>
+
+</html>
