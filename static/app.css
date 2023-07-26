@@ -1,0 +1,44 @@
+body{
+    background-color:rgb(234,182,118) ;
+}
+
+
+h1{
+
+text-align: center;
+}
+
+
+#newUserH2{
+    text-align: center;
+    text-decoration: underline;
+}
+
+#createNewBlogH2{
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+
+.usersList{
+    font-size: 20px;
+    color: blueviolet;
+}
+
+.usersList > li :hover{
+    font-size: 25px;
+}
+
+.allForms{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+
+button{
+    background-color: aqua;
+}
+

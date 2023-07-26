@@ -4,31 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/app.css">
     <title>Home</title>
 </head>
 
 <body>
+    <!--LINK FOR CREATING A NEW USER-->
+    <nav>
+        <a href="/new_user_form">new user</a>
+        <a href="/all_blogs"> blogs</a>
+    </nav>
 
 
-    <ul>
+    <h1>Welcome to Blogly!</h1>
+
+    <!--SHOWS ALL CURRENT USERS-->
+    <h2>Current users:</h2>
+    <ul class="usersList">
         {% for user in list_of_users %}
         <li> <a href="/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></li>
         {% endfor %}
 
     </ul>
 
-    <form action="/new_user" method="post">
-        <label for="first_name">first name</label>
-        <input type="text" name="first_name">
-
-        <label for="last_name">last name</label>
-        <input type="text" name="last_name">
-
-        <label for="image_url">enter profile picture url</label>
-        <input type="text" name="image_url">
-
-        <button>submit</button>
-    </form>
 
 </body>
 

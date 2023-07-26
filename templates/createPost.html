@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Users/mauriciosilva/Documents/SPRINGBOARD/flask-blogly/static/app.css">
+    <title>Create a blog</title>
+</head>
+
+<body>
+    <h2 id="createNewBlogH2">Create a new blog:</h2>
+    <section class="allForms">
+        <form action="/{{userID}}/new_post" method="post">
+            <label for="title">title</label>
+            <input type="text" name="title">
+
+            <label for="content">content</label>
+            <input type="text" name="content">
+
+            <button>submit</button>
+
+        </form>
+
+    </section>
+</body>
+
+</html>

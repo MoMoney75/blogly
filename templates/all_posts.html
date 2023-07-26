@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/app.css">
+    <title>Blogs</title>
+</head>
+
+<body>
+    {% for post in posts %}
+    <div>
+
+        <h2>By:{{post.user.first_name}} {{post.user.last_name}}</h2>
+
+        <h3>{{post.title}}</h3>
+        <a href="/view_post/{{post.id}}">view post</a>
+
+
+
+    </div>
+    {% endfor %}
+
+    <a href="/">back</a>
+
+</body>
+
+</html>
