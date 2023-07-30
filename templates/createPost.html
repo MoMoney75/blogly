@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Users/mauriciosilva/Documents/SPRINGBOARD/flask-blogly/static/app.css">
+    <link rel="stylesheet" href="/static/app.css">
     <title>Create a blog</title>
 </head>
 
@@ -18,11 +18,19 @@
             <label for="content">content</label>
             <input type="text" name="content">
 
-            <button>submit</button>
+            <p>Check all tags that apply</p>
 
+            {% for tag in tags %}
+            <label for="{{tag.name}}">{{tag.name}}</label>
+            <input type="checkbox" name="tags" value="{{tag.id}}">
+            {% endfor %}
+            <button>submit</button>
         </form>
 
+
     </section>
+
+    <button> <a href="/">cancel</a></button>
 </body>
 
 </html>

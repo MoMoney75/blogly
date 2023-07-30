@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>user_info</title>
-    <link rel="stylesheet" href="static/app.css" />
+    <link rel="stylesheet" href="/static/app.css" />
 </head>
 
 <body>
 
 
     <section class="usersList">
-        <div> {{user.image_url}}</div>
-        <img src="{{user.image_url}}" alt="profile photo of {{user.first_name}} {{user.last_name}}">
-        <div>first name: {{user.first_name}}</div>
-        <div>last name: {{user.last_name}}</div>
+
+        <img src="{{user.image_url}}" alt="{{user.first_name}} {{user.last_name}}">
+        <div>{{user.first_name}}</div>
+        <div>{{user.last_name}}</div>
 
 
-        <a href="/{{user.id}}/create_post">create a post</a>
+
     </section>
 
     <h2>POSTS:</h2>
@@ -28,28 +28,46 @@
             <h4>{{post.title}}</h4>
             <div>{{post.content}}</div>
             <di>created at:{{post.created_at}}</di>
+
+            <p>tags:</p>
+            {% for tag in post.tags %}
+            <div> <a href="/{{tag.id}}/details">{{tag.name}} </a></div>
+
+            {% endfor %}
+            <di></di>
+
+
+
+            <form action="/delete/{{post.id}}" method="post">
+                <button>delete</button>
+            </form>
+
+            <form action="/edit/{{post.id}}" method="post">
+                <button>edit</button>
+            </form>
+
         </li>
 
     </ul>
     {% endfor %}
 
 
+    <p><button> <a href="/{{user.id}}/create_post">create a post</a> </button> </p>
 
-
-    <a href="/">back to users</a>
+    <button><a href="/">back to users</a></button>
 
     </section>
 
     <span>
         <form>
 
-            <button formaction="/{{user.id}}/edit" formmethod="GET">edit</button>
+            <button formaction="/{{user.id}}/edit" formmethod="GET">edit user</button>
         </form>
 
     </span>
     <span>
         <form>
-            <button formaction="/{{user.id}}/delete" formmethod="POST">delete</button>
+            <button formaction="/{{user.id}}/delete" formmethod="POST">delete user</button>
 
         </form>
     </span>

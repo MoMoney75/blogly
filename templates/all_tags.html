@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tags</title>
+    <link rel="stylesheet" href="/static/app.css">
+</head>
+
+<body>
+
+    <h1>Heres a list of all existing tags</h1>
+    <ul>
+        {% for tag in all_tags %}
+        <li> <a href="/{{tag.id}}/details">{{tag.name}}</a></li>
+        {% endfor %}
+    </ul>
+    <a href=" /create_tag">create new tag</a>
+    <a href="/">back</a>
+
+</body>
+
+</html>

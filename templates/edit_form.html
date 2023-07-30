@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/app.css">
+    <link rel="stylesheet" href="/static/app.css">
     <title>edit post</title>
 </head>
 
@@ -17,6 +17,18 @@
         <label for="content">content</label>
         <input type="text" name="content" id="content">
         <button>submit</button>
+    </form>
+
+    <h2>choose all tags that apply:</h2>
+    <form id="tags_form" action="//edit/{{post.id}}/submit" method="post">
+        <label for="serious">serious</label>
+        <input type="checkbox" name="serious" id="serious">
+
+        <label for="funny">funny</label>
+        <input type="checkbox" name="funny" id="funny">
+
+        <label for="sad">sad</label>
+        <input type="checkbox" name="sad" id="sad">
     </form>
 </body>
 

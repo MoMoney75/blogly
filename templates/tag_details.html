@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
+    <title>Tag Details</title>
+</head>
+
+<h1>{{tag.name}}</h1>
+
+
+<h3>All current posts with this tag! :</h3>
+{% for post in tag.posts %}
+<p> <a href="/view_post/{{post.id}}">{{post.title}}</a> </p>
+{% endfor %}
+<form action="/{{tag.id}}/edit_tag"><button>edit</button></form>
+<form action="/{{tag.id}}/delete_tag"><button>delete</button></form>
+<a href="/">back</a>
+
+<body>
+
+</body>
+
+</html>
