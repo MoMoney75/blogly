@@ -114,7 +114,7 @@ def showPostForm(user_id):
     return render_template('createPost.html', userID=user_id, tags = tags)
 
 
-"""GETS for info for creating new post, creates instance of Post"""
+"""GETS info for creating new post, creates instance of Post"""
 @app.route('/<int:user_id>/new_post', methods = ['GET', 'POST'])
 def create_new_post(user_id):
     title = request.form['title']
@@ -129,7 +129,7 @@ def create_new_post(user_id):
     db.session.add(new_post)
     db.session.commit()   
 
-    return redirect('/')
+    return redirect('/all_blogs')
 
 @app.route('/all_blogs')
 def show_all_blogs():
